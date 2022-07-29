@@ -464,7 +464,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>connent<br>    http协议和https协议区别：http是超文本协议，信息是明文传输；https是具有安全性的ssl加密传输，ssl加密传输。<br>    https三次握手：<br> ​​​​   image:&#x2F;medias&#x2F;https.png</p>
+                <pre><code>http协议和https协议区别：http是超文本协议，信息是明文传输；https是具有安全性的ssl加密传输，ssl加密传输。
+https三次握手：
+     第一次：浏览器发送请求ssl版本号，询问何种对称密钥算法；服务器生成密钥信息，确认ssl版本号，对称算法，发送服务器证书（ca私钥加密）
+     第二次：浏览器对照ca信任表，存在啧公钥加密，的药服务器公钥，不存在则终止；浏览器随机产生堆成密钥，使用服务器公钥加密发送。
+     第三次：互发确认报文，确认使用该密钥；再次互发报文，确认握手成功，建立联系
+     最终建立联系
+</code></pre>
+<p> ​</p>
 
                 
             </div>
