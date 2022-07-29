@@ -574,7 +574,17 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>数字型注入：<br>    假设URL为HTTP：&#x2F;&#x2F;<a target="_blank" rel="noopener" href="http://www.xxser.com/test.php?id=8">www.xxser.com/test.php?id=8</a><br>    可以猜测SQl语句为：select * from table where id&#x3D;8<br>        步骤：1.HTTP：&#x2F;&#x2F;<a target="_blank" rel="noopener" href="http://www.xxser.com/test.php?id=8&#39;">www.xxser.com/test.php?id=8&#39;</a>    肯定报错<br>        2.HTTP：&#x2F;&#x2F;<a target="_blank" rel="noopener" href="http://www.xxser.com/test.php?id=8">www.xxser.com/test.php?id=8</a> and 1&#x3D;1 语句正常执行 返回数据和原始数据没有差异<br>        3.HTTP：&#x2F;&#x2F;<a target="_blank" rel="noopener" href="http://www.xxser.com/test.php?id=8">www.xxser.com/test.php?id=8</a> and 1&#x3D;2 语句正常执行 返回数据和原始数据有差异</p>
+<pre><code>数字性注入最多出现ASP PHP 弱语言：id=1自动推导成id为int类型 id=8 and 1=1推导为字符型 
+</code></pre>
+<p>而对于Java、C#这类强类型语言，如果试图把一个字符串转换为int类型，则会抛出异常，无法继续执行。所以，强类型的语言很少存在数字型注入漏洞。</p>
+<p>字符型注入：<br>    select * from table where username &#x3D;’admin’<br>    select * from table where username &#x3D;’admin and 1&#x3D;1’ 注入失败，因为and 1&#x3D;1 视为字符型。<br>    字符注入成功首先得闭合单引号 ：select * from table where username &#x3D;’admin’ and 1&#x3D;1 –’<br>    对update语句注入 update person set username &#x3D;’username’,set password ‘’+(select @@version)+ ‘’where id&#x3D;1</p>
+<pre><code>常见注入叫法：POST 注入
+             Cookie注入
+             延时注入
+             base64注入
+</code></pre>
+
                 
             </div>
             <hr/>
