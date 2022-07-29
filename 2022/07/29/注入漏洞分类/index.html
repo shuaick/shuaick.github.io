@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="工具介绍, Hexo">
+    <meta name="keywords" content="注入漏洞分类, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>工具介绍 | Hexo</title>
+    <title>注入漏洞分类 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -417,12 +417,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">工具介绍</h1>
+                    <h1 class="description center-align post-title">注入漏洞分类</h1>
                 </div>
             </div>
         </div>
@@ -574,45 +574,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>​<br>site:指定余名</p>
-<p>intext：正文中存在的关键字的网页</p>
-<p>intitle：标题</p>
-<p>info：一些基本信息</p>
-<p>inurl url存在的关键字的网页</p>
-<p>filetype： 搜索指定文件类型</p>
-<p>搜索Discuz论坛 主机：</p>
-<p>intext ：powered by Discuz</p>
-<p>产生原因：Discuz!ML 系统对cookie中的l接收的language参数内容未过滤，导致字符串拼接，从而执行php代码。</p>
-<p>关于namp的学习（小知识：任何程序想在CMD窗口下进行快捷访问，都必须配置环境变量）</p>
-<p>扫描c段（A段就是类似192，B段就是类似168，一次类推）</p>
-<p>扫描<a target="_blank" rel="noopener" href="http://www.xxser.com/">www.xxser.com</a> c段存活的的主机 -sp <a target="_blank" rel="noopener" href="http://www.xxser.com/">www.xxser.com</a> </p>
-<p>-p 指定窗口 -80 -p 1-6635（全部的意思）</p>
-<p>掌握常用参数</p>
-<p>端口状态概述 open 开放 closed 关闭 filtered 被过滤掉了，无法进行判断 unfiltered 未被过滤可以进行访问<br>参数：<br>1、-Pn 跳过主机发现，视为所有的主机都在线<br>2、sn 只做ping扫描不做端口扫描<br>3、sT\A\W\M 不同的扫描端口，进行扫描<br>4、-p 指定端口进行扫描 –exclude-ports：排除端口进行扫描<br>5、-sV 探测系统的版本<br>–version-intensity：设置相关的程度，详细级别，0~9 越高越详细<br>–version-trace：打印详细的版本扫描过程<br>6、脚本扫描<br>–scri&#x3D; ：指定对应的脚本名称<br>7、O：激活系统的探测<br>–osscan-limit：只对开放端口的有效主机进行系统的探测<br>8、-T&lt;0-5&gt;:时间模板，越大速度越快<br>9、-6：使能IPV6探测<br>10、-A：使能系统探测、版本检测、脚本扫描、路由追踪<br>11、-V：打印版本号<br>12、-v：增加输出的详细程度</p>
-<p>nmap的脚本功能：</p>
-<p>扫描web 敏感漏洞 namp -p 80 –script&#x3D;http-enum.nse <a target="_blank" rel="noopener" href="http://www.xxser.com/">www.xxser.com</a> </p>
-<p>扫描sql漏洞 主要使用 sql-injection.nse (脚本还可以在官网下载)</p>
-<p>使用所有脚本进行扫描 </p>
-<p>使用通配符扫描</p>
-<p>nmap –script all 127.0.1</p>
-<p>DirBuster 的使用  </p>
-<p>3.4指纹识别 ：某cms存在一个特征 在根目录下存在“dxs.txt”文件 当扫描其他网站时，也存在这种特征，此时可以快速识别这cms，故叫做指纹识别</p>
-<p>.基于特殊文件的md5值匹配</p>
-<p>基于web网站独有的favicon.ico、css、logo.ico、js等文件的md5 比对网站类型，通过收集CMS公开代码中的独有文件，这些文件一般轻易不会更改，通过爬虫对这些文件进行抓取并比对md5值，如果一样，则认为该系统匹配。这种识别速度最快，但可能不准确，因为这些独有文件可能在部署到真实系统中会进行更改，那么就会造成很大的误差。</p>
-<p>（1）robots.txt文件识别</p>
-<p>相关厂商下的cms（内容管理系统）程序文件包含说明当前cms名称及版本的特征码，其中一些独有的文件夹以及名称都是识别cms的好方法，如Discuz官网下robots.txt文件。dedecms官网 <a target="_blank" rel="noopener" href="http://www.dedecms.com/robots.txt%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%EF%BC%9A">http://www.dedecms.com/robots.txt文件内容：</a></p>
-<p>Disallow: &#x2F;plus&#x2F;feedback_js.php</p>
-<p>Disallow: &#x2F;plus&#x2F;mytag_js.php</p>
-<p>Disallow: &#x2F;plus&#x2F;rss.php</p>
-<p>Disallow: &#x2F;plus&#x2F;search.php</p>
-<p>Disallow: &#x2F;plus&#x2F;recommend.php</p>
-<p>Disallow: &#x2F;plus&#x2F;stow.php</p>
-<p>Disallow: &#x2F;plus&#x2F;count.php</p>
-<p>看到这个基本可以判断为dedecms。</p>
-<p>（2）计算机md5值</p>
-<p>计算网站所使中间件或cms目录下静态文件的md5值，md5码可以唯一地代表原信息的特征。静态文件包括html、js、css、image等，建立在站点静态文件存在的情况下访问，如 Dedecms 官网下网站根目录<a target="_blank" rel="noopener" href="http://www.dedecms.com/img/buttom_logo.gif%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%EF%BC%8C%E7%9B%AE%E5%89%8D%E6%9C%89%E4%B8%80%E4%BA%9B%E5%85%AC%E5%BC%80%E7%A8%8B%E5%BA%8F%EF%BC%8C%E9%80%9A%E8%BF%87%E9%85%8D%E7%BD%AEcms.txt%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E7%9B%B8%E5%BA%94%E5%80%BC%E8%BF%9B%E8%A1%8C%E8%AF%86%E5%88%AB">http://www.dedecms.com/img/buttom_logo.gif图片文件，目前有一些公开程序，通过配置cms.txt文件中的相应值进行识别</a></p>
-<p>​</p>
-
+                
                 
             </div>
             <hr/>
@@ -638,7 +600,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/07/29/%E5%B7%A5%E5%85%B7%E4%BB%8B%E7%BB%8D/">http://example.com/2022/07/29/%E5%B7%A5%E5%85%B7%E4%BB%8B%E7%BB%8D/</a>
+                    <a href="http://example.com/2022/07/29/%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%E5%88%86%E7%B1%BB/">http://example.com/2022/07/29/%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%E5%88%86%E7%B1%BB/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -843,17 +805,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/07/29/SQl%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/">
+                <a href="/2022/07/29/%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%E5%88%86%E7%B1%BB/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="SQl注入漏洞">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="注入漏洞分类">
                         
-                        <span class="card-title">SQl注入漏洞</span>
+                        <span class="card-title">注入漏洞分类</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -863,9 +826,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -874,6 +837,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -884,13 +848,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/07/29/%E5%86%85%E7%BD%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+                <a href="/2022/07/29/SQl%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="web渗透基础知识">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="SQl注入漏洞">
                         
-                        <span class="card-title">web渗透基础知识</span>
+                        <span class="card-title">SQl注入漏洞</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
