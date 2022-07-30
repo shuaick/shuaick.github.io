@@ -675,7 +675,8 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                SQL Server 注入’SQL  Server 可以精确到定位错误消息。因此攻击者通过错误消息来提取消息select * from user where  username&#x3D;’root’ and password&#x3D;’
+                                SQL Server 注入SQL  Server 可以精确到定位错误消息。因此攻击者通过错误消息来提取消息
+sys.databases：所有数据库名INFORMATION_SCHEMA.TABLES：当前数据库中的表INFORMATION_
                             
                         </div>
                         <div class="publish-info">
@@ -711,42 +712,6 @@
                         <div class="summary block-with-text">
                             
                                 数字型注入：    假设URL为HTTP：&#x2F;&#x2F;www.xxser.com/test.php?id=8    可以猜测SQl语句为：select * from table where id&#x3D;8        步骤
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-29
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                shuaick
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/07/29/SQl%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="SQl注入漏洞">
-                            
-                            <span class="card-title">SQl注入漏洞</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                学习环境：MySQL+phpstudy
-注入原理：String sql &#x3D;”select count(*) from admin where usename &#x3D;’”+admin.GetUsername()”‘+” and
                             
                         </div>
                         <div class="publish-info">
