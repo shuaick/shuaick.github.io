@@ -598,7 +598,17 @@
 <p>Order by语句 ：判断数据库表的列数（order 本身对某一列进行排序，默认升序）<br>select id,username,password from users where id &#x3D;1    &#x2F;2    &#x2F;3   直到报错就知道有多少列数</p>
 <p>配合union来攻击字段数<br>1.select id,username,password,sex from users where id &#x3D;1 union select null<br>  select null<br>  select null null<br>  select null null null 直到没有报错</p>
 <p>2.配合union来查询敏感信息<br>  id&#x3D;5 union select ‘X’, null,null,null from sysobject where xtype&#x3D;’U’<br>  id&#x3D;5 union select  null,’X’,null,null from sysobject where xtype&#x3D;’U’<br>  id&#x3D;5 union select  null,null,’X’,null from sysobject where xtype&#x3D;’U’<br>  id&#x3D;5 union select  null,null,null ,’X’,from sysobject where xtype&#x3D;’U’</p>
-<p>blog&#x2F;source&#x2F;image.png</p>
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML</title>
+    </head>
+        <body>
+            <p>要展示的图片：</p>
+            <img src="blog/source/image.png">
+        </body>
+</html>
 
                 
             </div>
