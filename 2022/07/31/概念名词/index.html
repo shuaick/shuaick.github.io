@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="web渗透基础知识, Hexo">
+    <meta name="keywords" content="概念名词, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>web渗透基础知识 | Hexo</title>
+    <title>概念名词 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -422,7 +422,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">web渗透基础知识</h1>
+                    <h1 class="description center-align post-title">概念名词</h1>
                 </div>
             </div>
         </div>
@@ -550,7 +550,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-07-29
+                    2022-07-31
                 </div>
                 
 
@@ -574,7 +574,18 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>–<br>    http协议和https协议区别：http是超文本协议，信息是明文传输；https是具有安全性的ssl加密传输，ssl加密传输。<br>    https三次握手：<br>         第一次：浏览器发送请求ssl版本号，询问何种对称密钥算法；服务器生成密钥信息，确认ssl版本号，对称算法，发送服务器证书（ca私钥加密）<br>         第二次：浏览器对照ca信任表，存在啧公钥加密，的药服务器公钥，不存在则终止；浏览器随机产生堆成密钥，使用服务器公钥加密发送。<br>         第三次：互发确认报文，确认使用该密钥；再次互发报文，确认握手成功，建立联系<br>         最终建立联系<br> ​–</p>
+                <p>域名概念：<br>由于IP地址具有不方便记忆并且不能显示地址组织的名称和性质等缺点，人们设计出了域名，并通过网域名称系统（DNS，Domain Name System）来将域名和IP地址相互映射，使人更方便地访问互联网，而不用去记住能够被机器直接读取的IP地址数串，有二级域名和多级域名</p>
+<p>域名对安全测试的意义：<br>1.  相同的二级域名的网站架构、源码、密码可能相似<br>2.  两个网站的域名解析的ip地址可能相同 </p>
+<p>DNS：<br>域名系统（英文：Domain Name System，缩写：DNS）是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。DNS使用UDP端口53。 </p>
+<p>1.  如果是自动获取dns,就向上查询，按照路由器，本地域名服务器查询<br>2.  如果是手动获取，就向设置的dns域名服务器查询<br>3.  距离越近的域名服务器，上网越快 </p>
+<p>DNS先查找本地host文件是否有缓存，没有在查找域名服务器</p>
+<p>CDN的全称是Content Delivery Network，即内容分发网络。通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。—–大型网络在不同地区有不同的服务器（节点技术）。 </p>
+<p>常见的dns攻击：<br>dns劫持—攻击服务器（地区），ip解析不正常，跳转到钓鱼网站</p>
+<p>常见的脚本语言：<br>PHP  小众型网站开发<br>java-mvc 大型网站开发<br>python-django.flask  <br>asp,aspx,jsp等等 </p>
+<p>后门（网站，服务器）：<br>1.  下次更容易进入<br>2.  管道，提供攻击的路径 </p>
+<p>Web组成架构模型：<br>1.  网站源码：分脚本类型，分应用方向覆盖<br>2.  操作系统：windows，linux                     不同的操作系统具有不同的病毒<br>3.  中间件（搭建平台）：apache,lis,tomcat,nginx   源码在中间件上实现<br>4.  数据库：mysql,access,mssql,oracle,Sybase,db2,postsql等等   数据库漏洞：弱口令等</p>
+<p>web网站源码漏洞多，可以从web拿到权限再攻击服务器。操作系统</p>
+<p>web源码类对应漏洞<br>1.sql注入，上传，xss，代码执行。变量覆盖，逻辑漏洞，反序列化等<br>2.web中间件对应漏洞<br>3.web数据库对应漏洞<br>4.其他第三方漏洞–qq\wps<br>5.app或其他pc应用结合   web  qpp就是使用webpack打包之后就是软件 app核心就是web，但是有些情况不一样，app会进行二次开发，<br>对app进行渗透出web协议转到web上进行渗透。</p>
 
                 
             </div>
@@ -601,7 +612,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/07/29/%E5%86%85%E7%BD%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">http://example.com/2022/07/29/%E5%86%85%E7%BD%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</a>
+                    <a href="http://example.com/2022/07/31/%E6%A6%82%E5%BF%B5%E5%90%8D%E8%AF%8D/">http://example.com/2022/07/31/%E6%A6%82%E5%BF%B5%E5%90%8D%E8%AF%8D/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -806,54 +817,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/07/29/%E5%B7%A5%E5%85%B7%E4%BB%8B%E7%BB%8D/">
+                <a href="/2022/07/31/%E6%A6%82%E5%BF%B5%E5%90%8D%E8%AF%8D/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="工具介绍">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="概念名词">
                         
-                        <span class="card-title">工具介绍</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-29
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            shuaick
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/07/29/%E5%86%85%E7%BD%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="web渗透基础知识">
-                        
-                        <span class="card-title">web渗透基础知识</span>
+                        <span class="card-title">概念名词</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -864,7 +839,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-31
                             </span>
                         <span class="publish-author">
                             
@@ -875,6 +850,43 @@
                     </div>
                 </div>
 
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/07/30/%E5%B8%B8%E8%A7%81%E6%95%B0%E6%8D%AE%E5%BA%93%E6%B3%A8%E5%85%A5%EF%BC%9Amysql%E6%B3%A8%E5%85%A5/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="常见数据库注入：mysql注入">
+                        
+                        <span class="card-title">常见数据库注入：mysql注入</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            shuaick
+                            
+                        </span>
+                    </div>
+                </div>
                 
             </div>
         </div>
