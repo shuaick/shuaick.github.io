@@ -574,7 +574,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>–<br>    http协议和https协议区别：http是超文本协议，信息是明文传输；https是具有安全性的ssl加密传输，ssl加密传输。<br>    https三次握手：<br>         第一次：浏览器发送请求ssl版本号，询问何种对称密钥算法；服务器生成密钥信息，确认ssl版本号，对称算法，发送服务器证书（ca私钥加密）<br>         第二次：浏览器对照ca信任表，存在啧公钥加密，的药服务器公钥，不存在则终止；浏览器随机产生堆成密钥，使用服务器公钥加密发送。<br>         第三次：互发确认报文，确认使用该密钥；再次互发报文，确认握手成功，建立联系<br>         最终建立联系<br> ​–</p>
+                <pre><code>http协议和https协议区别：http是超文本协议，信息是明文传输；https是具有安全性的ssl加密传输，ssl加密传输。
+https三次握手：
+     第一次：浏览器发送请求ssl版本号，询问何种对称密钥算法；服务器生成密钥信息，确认ssl版本号，对称算法，发送服务器证书（ca私钥加密）
+     第二次：浏览器对照ca信任表，存在啧公钥加密，的药服务器公钥，不存在则终止；浏览器随机产生堆成密钥，使用服务器公钥加密发送。
+     第三次：互发确认报文，确认使用该密钥；再次互发报文，确认握手成功，建立联系
+     最终建立联系
+</code></pre>
+<p>Host：主机或者域名地址   URL中web名称和端口号<br>Accept：指浏览器或者其他用户可以接受的MIME文件格式.Servlet可以根据它的判断并返回适当的文件格式<br>User-Agent：客户浏览器的名称  ——–用不同浏览器访问不同<br>Accept—Language：语言<br>Connect：表明request的内容类型<br>Cookie：记载服务器相关的用户信息，页可以实现会话功能<br>Referer：表明产生的请求与网页的Url<br>Accept-Chaeset:字符编码<br>Accept-Encoding:编码方式</p>
 
                 
             </div>
