@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="web渗透基础知识, Hexo">
+    <meta name="keywords" content="防止数据库注入, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>web渗透基础知识 | Hexo</title>
+    <title>防止数据库注入 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -417,12 +417,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">web渗透基础知识</h1>
+                    <h1 class="description center-align post-title">防止数据库注入</h1>
                 </div>
             </div>
         </div>
@@ -550,7 +550,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-07-29
+                    2022-08-07
                 </div>
                 
 
@@ -574,8 +574,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>http协议和https协议区别：http是超文本协议，信息是明文传输；https是具有安全性的ssl加密传输，ssl加密传输。<br>    https三次握手：<br>         第一次：浏览器发送请求ssl版本号，询问何种对称密钥算法；服务器生成密钥信息，确认ssl版本号，对称算法，发送服务器证书（ca私钥加密）<br>         第二次：浏览器对照ca信任表，存在啧公钥加密，的药服务器公钥，不存在则终止；浏览器随机产生堆成密钥，使用服务器公钥加密发送。<br>         第三次：互发确认报文，确认使用该密钥；再次互发报文，确认握手成功，建立联系<br>        最终建立联系</p>
-<p>Host：主机或者域名地址   URL中web名称和端口号<br>Accept：指浏览器或者其他用户可以接受的MIME文件格式.Servlet可以根据它的判断并返回适当的文件格式<br>User-Agent：客户浏览器的名称  ——–用不同浏览器访问不同<br>Accept—Language：语言<br>Connect：表明request的内容类型<br>Cookie：记载服务器相关的用户信息，页可以实现会话功能<br>Referer：表明产生的请求与网页的Url<br>Accept-Chaeset:字符编码<br>Accept-Encoding:编码方式</p>
+                <p>关于学习web安全</p>
+<p>举个例子：有个知识点是预编译技术可以有效得防御sql注入</p>
+<p>安全代码：int id&#x3D;Integer.parseInt(request.getParameter(“id”));<br>String sql &#x3D;”select id, username,password from users where id&#x3D;?”<br>PrepareStatement ps &#x3D; this.conn.prepareStatement(sql)&#x2F;&#x2F;使用预编译接口<br>ps.setInt(1,id);&#x2F;&#x2F;执行sql语句占位符的值<br>ResultSet res &#x3D;ps.executeQuery();<br>Users user &#x3D;new Users();<br>if(res.next()){<br>    &#x2F;&#x2F;封装user属性<br>}</p>
+<p>使用预编译技术：PreparedStatement 接口需使用使用setter（setShot、setString）<br>方法	描述<br>public void setInt(int paramIndex, int value)	为给定的参数索引，设置整数值<br>public void setString(int paramIndex, String value)	为给定的参数索引，设置String值<br>public void setFloat(int paramIndex, float value)	为给定的参数索引，设置float值<br>public void setDouble(int paramIndex, double value)	为给定的参数索引，设置double值<br>public int executeUpdate()	执行查询。 它用于创建，删除，插入，更新等。<br>public ResultSet executeQuery()	执行选择查询。 它返回一个ResultSet实例</p>
+<p>PreparedStatement 性能<br>数据库解析SQL字符串并为其创建查询计划需要花费时间。 查询计划则是对数据库如何以最有效的方式执行查询的分析。</p>
+<p>如果为每个查询或对数据库的更新提交新的完整SQL语句，则数据库必须解析SQL，并为查询创建查询计划。 通过重用现有的 PreparedStatement，您可以将SQL解析和查询计划复用于后续查询。 通过减少每次执行的解析和查询计划开销，这可以加快查询的执行速度。</p>
+<p>PreparedStatement 的复用有以下两个方面：<br>JDBC驱动程序重用 PreparedStatement。<br>数据库重用 PreparedStatement。<br>首先，JDBC驱动程序可以在内部缓存PreparedStatement对象，从而可以重用PreparedStatement对象。 这样可以节省少许PreparedStatement创建时间。</p>
+<p>有时候学到像防止数据库注入，就会有类似什么框架（Hibernate）什么接口PreparedStatement 接口需使用使用setter（setShot、setString）<br>像这种技术我们学习的时候要不要去做延申，就像Prepared Statement的性能和如何去使用接口或者框架。还是只要知道有这种东西（接口，框架）</p>
 
                 
             </div>
@@ -602,7 +608,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/07/29/%E5%86%85%E7%BD%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">http://example.com/2022/07/29/%E5%86%85%E7%BD%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</a>
+                    <a href="http://example.com/2022/08/07/%E9%98%B2%E6%AD%A2%E6%95%B0%E6%8D%AE%E5%BA%93%E6%B3%A8%E5%85%A5/">http://example.com/2022/08/07/%E9%98%B2%E6%AD%A2%E6%95%B0%E6%8D%AE%E5%BA%93%E6%B3%A8%E5%85%A5/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -807,54 +813,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/07/29/%E5%B7%A5%E5%85%B7%E4%BB%8B%E7%BB%8D/">
+                <a href="/2022/08/07/%E9%98%B2%E6%AD%A2%E6%95%B0%E6%8D%AE%E5%BA%93%E6%B3%A8%E5%85%A5/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="工具介绍">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="防止数据库注入">
                         
-                        <span class="card-title">工具介绍</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-29
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            shuaick
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/07/29/%E5%86%85%E7%BD%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="web渗透基础知识">
-                        
-                        <span class="card-title">web渗透基础知识</span>
+                        <span class="card-title">防止数据库注入</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -865,7 +835,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-07
                             </span>
                         <span class="publish-author">
                             
@@ -876,6 +846,43 @@
                     </div>
                 </div>
 
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/07/31/%E6%A6%82%E5%BF%B5%E5%90%8D%E8%AF%8D/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="概念名词">
+                        
+                        <span class="card-title">概念名词</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            shuaick
+                            
+                        </span>
+                    </div>
+                </div>
                 
             </div>
         </div>
