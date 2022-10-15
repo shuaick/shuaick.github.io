@@ -576,6 +576,9 @@
             <div id="articleContent">
                 <p>XMl 是在弥补HTML的不足<br>xml注入和xss注入很像漏洞利用成功的关键在于是否有闭合xml标签<br>xml可以直接修改表单来添加或修改信息<br>预防：转译字符</p>
 <p>Xpath注入：Xpath是Xml路径语言</p>
+<p>json：数据交换语言<br>json是根据” ： ， {} 区分各字符的意义的  如果向json注入恶意字符，那么json将解析失败<br>例如：admin”888</p>
+<p>HTTP Parameter Pollution（http参数污染）</p>
+<p>hhtp参数污染：使用&amp;将多个参数链接在一起，http选择接收，接收的参数会根据不同的环境变化<br>使得http参数污染有可能绕过waf<br>waf:定义模板中有些关键字：select 而http参数污染不需要使用定义模板的的关键字而进行注入<br>Asp.net news.aspx?id&#x3D;1;&amp;id&#x3D;s&amp;id&#x3D;e&amp;id&#x3D;1</p>
 
                 
             </div>
